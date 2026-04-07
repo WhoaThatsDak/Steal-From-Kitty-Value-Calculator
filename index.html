@@ -39,18 +39,18 @@
       border: none;
     }
 
-    /* Overlay to hide the toolbar */
+    /* Overlay to hide the toolbar completely */
     .toolbar-cover {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 8%; /* responsive height, approx toolbar size */
-      min-height: 50px; /* ensures enough coverage on small screens */
-      max-height: 70px; /* limits overlay on large screens */
-      background-color: #f5f5f5; /* same as page background */
-      z-index: 10;
-      pointer-events: none; /* allow clicks to pass through to sheet */
+      height: 12%; /* slightly larger to fully cover toolbar */
+      min-height: 60px; /* minimum coverage */
+      max-height: 100px; /* cap on large screens */
+      background-color: #f5f5f5;
+      z-index: 20;
+      pointer-events: auto; /* prevent clicks from passing through */
     }
 
     footer {
@@ -60,10 +60,18 @@
       text-align: center;
     }
 
-    /* Optional: adjust overlay for very small screens */
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .toolbar-cover {
+        height: 14%;
+        min-height: 55px;
+      }
+    }
+
     @media (max-width: 600px) {
       .toolbar-cover {
-        height: 10%;
+        height: 16%;
+        min-height: 50px;
       }
     }
   </style>
