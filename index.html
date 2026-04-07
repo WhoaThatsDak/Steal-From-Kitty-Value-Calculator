@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Data</title>
+  <title>Value Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <style>
     body {
-      font-family: Arial;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    table {
-      border-collapse: collapse;
-      background: white;
-    }
-    td, th {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    th {
-      background: black;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
       color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cbd5f5;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 15px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: black;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    iframe {
+      margin-top: 30px;
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-<h2>Project Data</h2>
-<table id="sheetTable"></table>
+  <div class="card">
+    <h1>Kitty Value Calculator</h1>
+    <p>
+      Click below to open your own editable copy.<br>
+      This keeps the original safe and lets dropdowns work.
+    </p>
 
-<script>
-fetch("https://script.google.com/macros/s/AKfycby802qvo00B4Mw5dHXFQWqon3IZvDxdgGeWamfY1OQwpOXm5QMiGE0WumXWBB1A8xSA/exec")
-  .then(res => res.json())
-  .then(data => {
-    const table = document.getElementById("sheetTable");
+    <a href="https://docs.google.com/spreadsheets/d/1O4Aqnb_BJFDJEwhR_nWNIuosLbPODlPekrx42LejTSo/copy" target="_blank">
+      <button>Open Calculator</button>
+    </a>
 
-    data.forEach((row, i) => {
-      let tr = document.createElement("tr");
+    <p style="margin-top:20px; font-size: 14px;">
+      A preview is shown below (view only):
+    </p>
 
-      row.forEach(cell => {
-        let el = document.createElement(i === 0 ? "th" : "td");
-        el.textContent = cell;
-        tr.appendChild(el);
-      });
-
-      table.appendChild(tr);
-    });
-  });
-</script>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-PLACEHOLDER/pubhtml?widget=true&headers=false"></iframe>
+  </div>
 
 </body>
 </html>
