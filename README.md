@@ -1,7 +1,10 @@
 # Steal From Kitty Value Calculator
 
-This branch now contains the compiled production site only.
+This repo deploys GitHub Pages by cloning `WhoaThatsDak/StealFromDev` in Actions, building it, and publishing the resulting `dist/`.
 
-GitHub Pages deploys the contents of `gitversion/` using the workflow in `.github/workflows/deploy.yml`.
+Required GitHub Actions secrets for the build:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
 
 2026-05-16 AddedKittys
