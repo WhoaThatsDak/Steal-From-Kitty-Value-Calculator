@@ -4,6 +4,7 @@ This repo deploys GitHub Pages by cloning `WhoaThatsDak/StealFromDev` in Actions
 
 Required GitHub Actions secrets for the build:
 
+- `STEALFROMDEV_REPO_TOKEN`
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
 
